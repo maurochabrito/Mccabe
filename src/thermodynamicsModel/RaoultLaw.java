@@ -35,8 +35,7 @@ public class RaoultLaw {
 			T = T-f(X, T, vpm1, vpm2, gm, pressure)/df(X, T, vpm1, vpm2, gm, pressure);
 			X = x(Y, previousX, T, vpm1, vpm2, gm, pressure);
 		}
-		Y = y(X, T, vpm1, vpm2, gm, pressure);
-		return Y;
+		return X;
 	}
 	public static Double f(Double X, Double T, VapourPressureModel vpm1, VapourPressureModel vpm2, GammaModel gm, Double pressure) {
 		Double f1 = gm.gamma(1, X, T)*X*vpm1.pressure(T);

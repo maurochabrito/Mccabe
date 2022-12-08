@@ -15,6 +15,7 @@ public class Program {
 		Double externalPressure = 760.0; //mmHg
 		Double X = 0.2;
 		Double Y = RaoultLaw.iterativeY(X, vpm1, vpm2, gm, externalPressure);
+		X = RaoultLaw.iterativeX(Y, X, vpm1, vpm2, gm, externalPressure);
 		System.out.println("X = "+ X +"\nY = "+ Y);
 	}
 
