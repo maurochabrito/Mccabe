@@ -1,5 +1,10 @@
 package application;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import brain.Line;
+import brain.Plate;
 import thermodynamicsModel.GammaModel;
 import thermodynamicsModel.RaoultLaw;
 import thermodynamicsModel.VapourPressureModel;
@@ -17,6 +22,26 @@ public class Program {
 		Double Y = RaoultLaw.iterativeY(X, vpm1, vpm2, gm, externalPressure);
 		X = RaoultLaw.iterativeX(Y, X, vpm1, vpm2, gm, externalPressure);
 		System.out.println("X = "+ X +"\nY = "+ Y);
+		System.out.println("Test #1 ended\n\n");
+		
+		Double xb = 0.1;
+		Double Xd = 0.8;
+		List<Plate> plateList = new ArrayList<>();
+		Line operationalLine = new Line(1.0, 0.0);
+		Line horizontalLine = new Line(0.0, Xd);
+		Double currentX = horizontalLine.nonElementarIntersection(gm, vpm1, vpm2, externalPressure);
+		Double currentT = RaoultLaw.iterativeY_T(currentX, vpm1, vpm2, gm, externalPressure);
+		Integer i = 1;
+		Plate currentPlate = new Plate(i, currentX, Xd, currentT);
+		System.out.println(currentPlate);
+		while (currentX > xb) {
+			i++;
+			horizontalLine = new Line(0.0, currentX);
+			currentX = horizontalLine.nonElementarIntersection(gm, vpm1, vpm2, externalPressure);
+			currentT = RaoultLaw.iterativeY_T(currentX, vpm1, vpm2, gm, externalPressure);
+			currentPlate = new Plate(i, currentX, Xd, currentT);
+			System.out.println(currentPlate);
+		}
 	}
 
 }

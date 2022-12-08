@@ -9,6 +9,18 @@ public class Plate implements Serializable {
 	private Double X;
 	private Double Y;
 	private Double temperature;
+	
+	public Plate(Integer id, Double x, Double y, Double temperature) {
+		this.id = id;
+		X = x;
+		Y = y;
+		this.temperature = temperature;
+	}
+	public Plate(Double x, Double y, Double temperature) {
+		X = x;
+		Y = y;
+		this.temperature = temperature;
+	}
 	public Double getX() {
 		return X;
 	}
@@ -20,7 +32,9 @@ public class Plate implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Plate [Nº = +"+id+" X=" + X + ", Y=" + Y + ", temperature=" + temperature + "K ]";
+		String toString = "Plate Nº "+id+":"
+				+ " X = "+String.format("%.3f",X)+" Y = "+String.format("%.3f", Y)+" T = "+String.format("%.2f", temperature)+"K";
+		return toString;
 	}
 	
 }
