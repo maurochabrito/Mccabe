@@ -24,8 +24,8 @@ public class Program {
 		System.out.println("X = "+ X +"\nY = "+ Y);
 		System.out.println("Test #1 ended\n\n");
 		
-		Double xb = 0.1;
-		Double Xd = 0.8;
+		Double xb = 0.01;
+		Double Xd = 0.85;
 		List<Plate> plateList = new ArrayList<>();
 		Line operationalLine = new Line(1.0, 0.0);
 		Line horizontalLine = new Line(0.0, Xd);

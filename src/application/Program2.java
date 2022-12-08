@@ -41,6 +41,8 @@ public class Program2 {
 		Double xTriple = qLine.x(yTriple);
 		//StrippingLine
 		Double strippingAlpha = (xb-yTriple)/(xb-xTriple);
+		Double strippingBetha = yTriple-strippingAlpha*xTriple;
+		Line strippingLine = new Line(strippingAlpha, strippingBetha);
 	}
 
 }
