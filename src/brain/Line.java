@@ -19,4 +19,18 @@ public class Line {
 	public Boolean compareTo(Line otherLine, Double X) {
 		return this.y(X) > otherLine.y(X);
 	}
+	public Double intersection(Line otherLine) {
+		Double X = 0.0; //initial X
+		Double h = 0.001; //Sensibility
+		Boolean comparation = this.compareTo(otherLine, X);
+		Boolean newComparation = this.compareTo(otherLine, X+h);
+		while(newComparation == comparation) {
+			X = X+h;
+			comparation = newComparation;
+			newComparation = this.compareTo(otherLine, X+h);
+		}
+		Double limitX = X;
+		X = (limitX+X)/2;
+		return X;
+	}
 }
