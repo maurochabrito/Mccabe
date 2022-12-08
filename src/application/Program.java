@@ -32,14 +32,16 @@ public class Program {
 		Double currentX = horizontalLine.nonElementarIntersection(gm, vpm1, vpm2, externalPressure);
 		Double currentT = RaoultLaw.iterativeY_T(currentX, vpm1, vpm2, gm, externalPressure);
 		Integer i = 1;
-		Plate currentPlate = new Plate(i, currentX, Xd, currentT);
+		Double currentY = RaoultLaw.iterativeY(currentX, vpm1, vpm2, gm, externalPressure);
+		Plate currentPlate = new Plate(i, currentX, currentY, currentT);
 		System.out.println(currentPlate);
 		while (currentX > xb) {
 			i++;
 			horizontalLine = new Line(0.0, currentX);
 			currentX = horizontalLine.nonElementarIntersection(gm, vpm1, vpm2, externalPressure);
 			currentT = RaoultLaw.iterativeY_T(currentX, vpm1, vpm2, gm, externalPressure);
-			currentPlate = new Plate(i, currentX, Xd, currentT);
+			currentY = RaoultLaw.iterativeY(currentX, vpm1, vpm2, gm, externalPressure);
+			currentPlate = new Plate(i, currentX, currentY, currentT);
 			System.out.println(currentPlate);
 		}
 	}
