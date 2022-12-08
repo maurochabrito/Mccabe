@@ -5,6 +5,12 @@ import thermodynamicsModel.GammaModel;
 public class MargulesGammaModel implements GammaModel {
 	Double A1;
 	Double A2;
+	
+	public MargulesGammaModel(Double a1, Double a2) {
+		A1 = a1;
+		A2 = a2;
+	}
+
 	@Override
 	public Double gamma(Integer index, Double X, Double T) {
 		if(index == 1) {
