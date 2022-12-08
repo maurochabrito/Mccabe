@@ -6,8 +6,8 @@ import thermodynamicsModel.VapourPressureModel;
 
 public class Line {
 	private final Double h = 0.0001;
-	private Double alpha;
-	private Double betha;
+	protected Double alpha;
+	protected Double betha;
 	
 	public Line(Double alpha, Double betha) {
 		this.alpha = alpha;

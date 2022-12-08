@@ -36,8 +36,11 @@ public class Program2 {
 		Double rMin = (-yi+xd)/(yi-xi);
 		Double r = 1.5;
 		Line minimalRectifyingLine = new Line(rMin/(rMin+1),1/(rMin+1));
-		Line RectifyingLine = new Line(r*rMin/(r*rMin+1),1/(r*rMin+1));
-
+		Line rectifyingLine = new Line(r*rMin/(r*rMin+1),1/(r*rMin+1));
+		Double yTriple = qLine.intersection(rectifyingLine);//Triple intersection between qline and operational lines
+		Double xTriple = qLine.x(yTriple);
+		//StrippingLine
+		Double strippingAlpha = (xb-yTriple)/(xb-xTriple);
 	}
 
 }

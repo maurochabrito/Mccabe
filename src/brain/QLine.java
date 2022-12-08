@@ -3,11 +3,12 @@ package brain;
 import thermodynamicsModel.GammaModel;
 import thermodynamicsModel.VapourPressureModel;
 
-public class QLine {
+public class QLine extends Line{
 	public Double q;
 	public Double z;
 	
 	public QLine(Double q, Double z) {
+		super((-q)/(1-q), 1/(1-q));
 		this.q = q;
 		this.z = z;
 	}
@@ -24,8 +25,6 @@ public class QLine {
 		if(q == 1) {
 			return z;
 		}else {
-		Double alpha = (-q)/(1-q);
-		Double betha = 1/(1-q);
 		Line qLine = new Line(alpha, betha);
 		double xIntersected = qLine.nonElementarIntersection(gm, vpm1, vpm2, pressure);
 		return xIntersected;
