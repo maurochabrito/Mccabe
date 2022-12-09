@@ -32,7 +32,7 @@ public class Plate implements Serializable {
 	}
 	@Override
 	public String toString() {
-		String toString = "Plate Nº "+id+":"
+		String toString = "Plate Number "+id+":"
 				+ " X = "+String.format("%.3f",X)+" Y = "+String.format("%.3f", Y)+" T = "+String.format("%.2f", temperature)+"K";
 		return toString;
 	}

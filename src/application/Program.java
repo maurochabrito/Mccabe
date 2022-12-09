@@ -21,14 +21,14 @@ public class Program {
 		Double X = 0.2;
 		Double Y = RaoultLaw.iterativeY(X, vpm1, vpm2, gm, externalPressure);
 		X = RaoultLaw.iterativeX(Y, X, vpm1, vpm2, gm, externalPressure);
-		System.out.println("X = "+ X +"\nY = "+ Y);
 		System.out.println("Test #1 ended\n\n");
 		
 		Double xb = 0.01;
-		Double Xd = 0.85;
+		Double xd = 0.85;
+		System.out.println("Xb = "+ xb +"\nXd = "+ xd);
 		List<Plate> plateList = new ArrayList<>();
 		Line operationalLine = new Line(1.0, 0.0);
-		Line horizontalLine = new Line(0.0, Xd);
+		Line horizontalLine = new Line(0.0, xd);
 		Double currentX = horizontalLine.nonElementarIntersection(gm, vpm1, vpm2, externalPressure);
 		Double currentT = RaoultLaw.iterativeY_T(currentX, vpm1, vpm2, gm, externalPressure);
 		Integer i = 1;

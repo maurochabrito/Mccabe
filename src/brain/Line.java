@@ -13,6 +13,23 @@ public class Line {
 		this.alpha = alpha;
 		this.betha = betha;
 	}
+	
+	public Double getAlpha() {
+		return alpha;
+	}
+
+	public void setAlpha(Double alpha) {
+		this.alpha = alpha;
+	}
+
+	public Double getBetha() {
+		return betha;
+	}
+
+	public void setBetha(Double betha) {
+		this.betha = betha;
+	}
+
 	public Double y(Double X) {
 		Double y = alpha*X+betha;
 		return y;

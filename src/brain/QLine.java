@@ -8,7 +8,7 @@ public class QLine extends Line{
 	public Double z;
 	
 	public QLine(Double q, Double z) {
-		super((-q)/(1-q), 1/(1-q));
+		super((q)/(q-1), -z/(q-1));
 		this.q = q;
 		this.z = z;
 	}
@@ -29,9 +29,5 @@ public class QLine extends Line{
 		double xIntersected = qLine.nonElementarIntersection(gm, vpm1, vpm2, pressure);
 		return xIntersected;
 		}
-	}
-	public Double y(Double x) {
-		Double y = x*(-q)/(1-q)+1/(1-q);
-		return y;
 	}
 }
