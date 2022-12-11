@@ -35,13 +35,12 @@ public class MccabeThiele {
 		this.vpm1 = vpm1;
 		this.vpm2 = vpm2;
 		this.gm = gm;
-
 		this.qLine = new QLine(q, z);
 		// RectifyingLine
 		Double rMin = this.rMin();
 		this.rectifyingLine = new Line(r * rMin / (r * rMin + 1), xd / (r * rMin + 1));
 		Double xTriple = qLine.intersection(rectifyingLine);// Triple intersection between qline and operational lines
-		Double yTriple = qLine.y(xTriple);
+		Double yTriple = rectifyingLine.y(xTriple);
 		// StrippingLine
 		Double strippingAlpha = (yTriple - xb) / (xTriple - xb);
 		Double strippingBetha = yTriple - strippingAlpha * xTriple;
@@ -50,9 +49,9 @@ public class MccabeThiele {
 	//Methods
 	public Double rMin() {
 		Double xi = qLine.intersectionEquilibriumLine(vpm1, vpm2, gm, externalPressure);
-		Double yi = qLine.y(xi);
+		Double yi = RaoultLaw.iterativeY(xi,vpm1, vpm2, gm, externalPressure);
 		Double rMin = ((yi - xd) / (xi - xd)) / (1 - ((yi - xd) / (xi - xd)));
-		return ((yi - xd) / (xi - xd)) / (1 - ((yi - xd) / (xi - xd)));
+		return rMin;
 	}
 	//Next: implement Nmin method, returning the exact value and a overload plateList returning Nmin plateList;
 	public List<Plate> plateList(){

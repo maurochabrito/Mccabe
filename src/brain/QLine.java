@@ -30,4 +30,23 @@ public class QLine extends Line{
 		return xIntersected;
 		}
 	}
+	@Override
+	public Double intersection(Line otherLine) {
+		Double X = 0.0; //initial X
+		if(!(this.q == 1.0)) {
+			//h -> Sensibility
+			Boolean comparation = this.compareTo(otherLine, X);
+			Boolean newComparation = this.compareTo(otherLine, X+h);
+			while(newComparation == comparation) {
+				X = X+h;
+				comparation = newComparation;
+				newComparation = this.compareTo(otherLine, X+h);
+			}
+			Double limitX = X;
+			X = (limitX+X)/2;
+			return X;
+		}else {
+			return z;
+		}
+	}
 }

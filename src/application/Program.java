@@ -24,8 +24,8 @@ public class Program {
 		X = RaoultLaw.iterativeX(Y, X, vpm1, vpm2, gm, externalPressure);
 		System.out.println("Test: 1 - Total reflux column n\n");
 		
-		Double xb = 0.01;
-		Double xd = 0.85;
+		Double xb = 0.1;
+		Double xd = 0.8;
 		System.out.println("Xb = "+ xb +"\nXd = "+ xd);
 		List<Plate> plateList = new ArrayList<>();
 		Line operationalLine = new Line(1.0, 0.0);

@@ -25,6 +25,7 @@ public class Program5 {
 		VapourPressureModel vpm2 = new Antoine(18.3036,3816.44,-46.13);
 		GammaModel gm = new MargulesGammaModel(1.6022,0.7947);
 		Boolean running = true;
+		Double externalPressure = null;
 		Double xb = null;
 		Double xd = null;
 		Double z = null;
@@ -34,7 +35,7 @@ public class Program5 {
 		while(running) {
 			try {
 				System.out.println("Enter externalPressure");
-				Double externalPressure = variableRequest("system pressure","values in atm and dot for decimal places.",sc)*760.0;
+				externalPressure = variableFill("system pressure","values in atm and dot for decimal places.",sc,externalPressure);
 				xb = variableFill("Xbottom","dot for decimal places.",sc,xb);
 				xd = variableFill("Xdistillate","dot for decimal places.",sc,xd);
 				z = variableFill("Zf","feed global composition.",sc,z);
@@ -57,6 +58,7 @@ public class Program5 {
 					q = variableFill("q parameter","dot for decimal places",sc,q);
 				break;
 				default:
+					choice = null;
 					throw new BrainException("Invalid option!");
 				}
 				r = variableFill("reflux ratio","type the proportion to minimal reflux rate.\nFor ex: 1.2 means a reflux ration of 120 % of minimal.\nDot for decimal places.",sc,r);

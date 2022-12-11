@@ -18,10 +18,10 @@ public class Program3 {
 		GammaModel gm = new MargulesGammaModel(1.6022,0.7947);
 		Double externalPressure = 1.0;//atm
 		Double xb = 0.01;
-		Double xd = 0.8;
+		Double xd = 0.85;
 		Double z = 0.5;
-		Double q = 0.5;
-		Double r = 1.3;
+		Double q = 1.0;
+		Double r = 1.2;
 		System.out.println("Test: 3 - Generic simple column\nImplementing Mccabe-Thile by a proper Class\n\n");
 		MccabeThiele mt = new MccabeThiele(externalPressure, xd, xb, z, q, r, vpm1, vpm2, gm);
 		List<Plate> plateList = new ArrayList<>();
