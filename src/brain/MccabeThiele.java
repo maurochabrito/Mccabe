@@ -54,7 +54,7 @@ public class MccabeThiele {
 		Double rMin = ((yi - xd) / (xi - xd)) / (1 - ((yi - xd) / (xi - xd)));
 		return ((yi - xd) / (xi - xd)) / (1 - ((yi - xd) / (xi - xd)));
 	}
-
+	//Next: implement Nmin method, returning the exact value and a overload plateList returning Nmin plateList;
 	public List<Plate> plateList(){
 		List<Plate> plateList = new ArrayList<>();
 		//First stage

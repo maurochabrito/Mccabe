@@ -21,7 +21,7 @@ public class Program {
 		Double X = 0.2;
 		Double Y = RaoultLaw.iterativeY(X, vpm1, vpm2, gm, externalPressure);
 		X = RaoultLaw.iterativeX(Y, X, vpm1, vpm2, gm, externalPressure);
-		System.out.println("Test #1 ended\n\n");
+		System.out.println("Test: 1 - Total reflux column n\n");
 		
 		Double xb = 0.01;
 		Double xd = 0.85;

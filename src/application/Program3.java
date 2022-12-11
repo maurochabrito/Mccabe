@@ -22,7 +22,7 @@ public class Program3 {
 		Double z = 0.5;
 		Double q = 0.5;
 		Double r = 1.3;
-		System.out.println("Test #3\n\n");
+		System.out.println("Test: 3 - Generic simple column\nImplementing Mccabe-Thile by a proper Class\n\n");
 		MccabeThiele mt = new MccabeThiele(externalPressure, xd, xb, z, q, r, vpm1, vpm2, gm);
 		List<Plate> plateList = new ArrayList<>();
 		plateList = mt.plateList();
