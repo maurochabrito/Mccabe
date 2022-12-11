@@ -15,10 +15,11 @@ import thermodynamicsModel.impl.MargulesGammaModel;
 public class Program2 {
 
 	public static void main(String[] args) {
+		//It will not be supported
 		VapourPressureModel vpm1 = new Antoine(18.9119,3803.98,-41.68);
 		VapourPressureModel vpm2 = new Antoine(18.3036,3816.44,-46.13);
 		GammaModel gm = new MargulesGammaModel(1.6022,0.7947);
-		Double externalPressure = 760.0; //mmHg
+		Double externalPressure = 1.0; //mmHg
 		System.out.println("Test: 2 - Generic simple column\n\n");
 		Double xb = 0.01;
 		Double xd = 0.8;

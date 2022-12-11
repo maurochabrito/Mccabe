@@ -13,13 +13,13 @@ public class Antoine implements VapourPressureModel {
 	}
 	@Override
 	public Double temperature(Double pressure) {
-		Double temperature = B/(A-Math.log(pressure))-C;
+		Double temperature = B/(A-Math.log(760.0*pressure))-C;//input pressure in atm
 		return temperature;
 	}
 	@Override
 	public Double pressure(Double temperature) {
 		Double pressure = Math.exp(A-B/(temperature+C));
-		return pressure;
+		return pressure/1.0;//return pressure in atm
 	}
 	
 	
